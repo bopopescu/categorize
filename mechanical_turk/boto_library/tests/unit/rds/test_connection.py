@@ -77,7 +77,7 @@ class TestRDSConnection(AWSMockServiceTestCase):
                   <InstanceCreateTime>2012-10-03T22:01:51.047Z</InstanceCreateTime>
                   <AllocatedStorage>200</AllocatedStorage>
                   <DBInstanceClass>db.m1.large</DBInstanceClass>
-                  <MasterUsername>awsuser</MasterUsername>
+                  <MainUsername>awsuser</MainUsername>
                 </DBInstance>
             </DBInstances>
           </DescribeDBInstancesResult>
@@ -103,7 +103,7 @@ class TestRDSConnection(AWSMockServiceTestCase):
             db.endpoint,
             (u'mydbinstance2.c0hjqouvn9mf.us-west-2.rds.amazonaws.com', 3306))
         self.assertEqual(db.instance_class, 'db.m1.large')
-        self.assertEqual(db.master_username, 'awsuser')
+        self.assertEqual(db.main_username, 'awsuser')
         self.assertEqual(db.availability_zone, 'us-west-2b')
         self.assertEqual(db.backup_retention_period, '1')
         self.assertEqual(db.preferred_backup_window, '10:30-11:00')
